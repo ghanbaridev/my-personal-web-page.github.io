@@ -1,0 +1,124 @@
+/* General Styles */
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #0a0a0a;
+    /* Metallic Black */
+    color: #e0e0e0;
+    /* Light Gray for text */
+}
+
+
+/* Header Styles */
+
+header {
+    background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+    /* Metallic Black Gradient */
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #00a8ff;
+    /* Metallic Blue */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff4d4d;
+    /* Metallic Red */
+}
+
+
+/* Section Styles */
+
+section {
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 800px;
+    background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+    /* Metallic Black Gradient */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+section h2 {
+    color: #00a8ff;
+    /* Metallic Blue */
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+
+/* Project Styles */
+
+.project {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #1a1a1a;
+    /* Dark Gray */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.project h3 {
+    color: #ff4d4d;
+    /* Metallic Red */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.project p {
+    color: #e0e0e0;
+    /* Light Gray */
+}
+
+
+/* Footer Styles */
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+    /* Metallic Black Gradient */
+    color: #ffffff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
