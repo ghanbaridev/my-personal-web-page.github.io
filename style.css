@@ -1,32 +1,104 @@
 /* General Styles */
-
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #0a0a0a;
-    /* Metallic Black */
-    color: #e0e0e0;
-    /* Light Gray for text */
+    background-color: #0a0a0a; /* Metallic Black */
+    color: #e0e0e0; /* Light Gray for text */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+body.light-mode {
+    background-color: #f0f0f0; /* Light Gray (Darker than white) */
+    color: #333; /* Dark Gray */
+}
+
+/* Container for content */
+.container {
+    max-width: 80%; /* Adjusted to 80% of the page width */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Floating Button */
+.floating-btn {
+    position: fixed;
+    bottom: 50px; /* Adjusted to be higher */
+    right: 20px;
+    background: #00a8ff; /* Metallic Blue */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.floating-btn:hover {
+    background: #ff4d4d; /* Metallic Red */
+    transform: scale(1.1);
+}
+
+body.light-mode .floating-btn {
+    background: #ff4d4d; /* Metallic Red */
+    color: #fff;
+}
+
+body.light-mode .floating-btn:hover {
+    background: #00a8ff; /* Metallic Blue */
+}
 
 /* Header Styles */
-
 header {
-    background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
-    /* Metallic Black Gradient */
+    background: linear-gradient(145deg, #1a1a1a, #0a0a0a); /* Metallic Black Gradient */
     color: #ffffff;
     padding: 20px 0;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease;
+}
+
+body.light-mode header {
+    background: linear-gradient(145deg, #00a8ff, #ff4d4d); /* Blue and Red Gradient */
+    color: #fff;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #00a8ff; /* Metallic Blue */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1);
+}
+
+body.light-mode .profile-pic {
+    border-color: #ff4d4d; /* Metallic Red */
 }
 
 header h1 {
     margin: 0;
     font-size: 2.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+body.light-mode header h1 {
+    text-shadow: none;
 }
 
 nav ul {
@@ -41,37 +113,53 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #00a8ff;
-    /* Metallic Blue */
+    color: #00a8ff; /* Metallic Blue */
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #ff4d4d;
-    /* Metallic Red */
+    color: #ff4d4d; /* Metallic Red */
 }
 
+body.light-mode nav ul li a {
+    color: #ff4d4d; /* Metallic Red */
+}
+
+body.light-mode nav ul li a:hover {
+    color: #00a8ff; /* Metallic Blue */
+}
 
 /* Section Styles */
-
 section {
     padding: 30px;
-    margin: 20px auto;
-    max-width: 800px;
-    background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
-    /* Metallic Black Gradient */
+    margin: 20px 0;
+    background: linear-gradient(145deg, #1a1a1a, #0a0a0a); /* Metallic Black Gradient */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+body.light-mode section {
+    background: linear-gradient(145deg, #e0e0e0, #d0d0d0); /* Light Gradient (Darker) */
+    color: #333;
 }
 
 section h2 {
-    color: #00a8ff;
-    /* Metallic Blue */
+    color: #00a8ff; /* Metallic Blue */
     font-size: 2rem;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+body.light-mode section h2 {
+    color: #ff4d4d; /* Metallic Red */
+    text-shadow: none;
 }
 
 section p {
@@ -79,43 +167,177 @@ section p {
     line-height: 1.8;
 }
 
-
-/* Project Styles */
-
-.project {
+/* Education and Experience Styles */
+.education-item, .experience-item {
     margin-bottom: 20px;
-    padding: 15px;
-    background: #1a1a1a;
-    /* Dark Gray */
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.project h3 {
-    color: #ff4d4d;
-    /* Metallic Red */
+.education-item h3, .experience-item h3 {
+    color: #00a8ff; /* Metallic Blue */
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
-.project p {
-    color: #e0e0e0;
-    /* Light Gray */
+body.light-mode .education-item h3, body.light-mode .experience-item h3 {
+    color: #ff4d4d; /* Metallic Red */
 }
 
+.education-item p, .experience-item p {
+    color: #e0e0e0; /* Light Gray */
+    font-size: 1rem;
+}
+
+body.light-mode .education-item p, body.light-mode .experience-item p {
+    color: #333; /* Dark Gray */
+}
+
+.experience-item ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.experience-item ul li {
+    margin-bottom: 10px;
+}
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.skill-name {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.skill-bar {
+    background: #333; /* Dark Gray */
+    border-radius: 5px;
+    height: 10px;
+    overflow: hidden;
+}
+
+body.light-mode .skill-bar {
+    background: #d0d0d0; /* Light Gray (Darker) */
+}
+
+.skill-level {
+    background: #00a8ff; /* Metallic Blue */
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+
+body.light-mode .skill-level {
+    background: #ff4d4d; /* Metallic Red */
+}
+
+.skill-percent {
+    display: block;
+    text-align: right;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Projects Section */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project {
+    flex: 1 1 calc(50% - 20px); /* Two columns */
+    background: #1a1a1a; /* Dark Gray */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    background: #2a2a2a; /* Slightly lighter on hover */
+}
+
+body.light-mode .project {
+    background: #e0e0e0; /* Light Gray (Darker) */
+}
+
+body.light-mode .project:hover {
+    background: #d0d0d0; /* Even lighter on hover */
+}
+
+.project h3 {
+    color: #ff4d4d; /* Metallic Red */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+body.light-mode .project h3 {
+    color: #00a8ff; /* Metallic Blue */
+}
+
+.project p {
+    color: #e0e0e0; /* Light Gray */
+}
+
+body.light-mode .project p {
+    color: #333; /* Dark Gray */
+}
+
+/* Contact Section */
+.github-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #00a8ff; /* Metallic Blue */
+    text-decoration: none;
+    font-size: 1.5rem; /* Larger icon size */
+    transition: color 0.3s ease;
+}
+
+.github-link:hover {
+    color: #ff4d4d; /* Metallic Red */
+}
+
+body.light-mode .github-link {
+    color: #ff4d4d; /* Metallic Red */
+}
+
+body.light-mode .github-link:hover {
+    color: #00a8ff; /* Metallic Blue */
+}
+
+.github-link i {
+    margin-right: 8px;
+}
 
 /* Footer Styles */
-
 footer {
     text-align: center;
     padding: 15px;
-    background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
-    /* Metallic Black Gradient */
+    background: linear-gradient(145deg, #1a1a1a, #0a0a0a); /* Metallic Black Gradient */
     color: #ffffff;
     position: fixed;
     width: 100%;
     bottom: 0;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease;
+}
+
+body.light-mode footer {
+    background: linear-gradient(145deg, #00a8ff, #ff4d4d); /* Blue and Red Gradient */
+    color: #fff;
 }
 
 footer p {
